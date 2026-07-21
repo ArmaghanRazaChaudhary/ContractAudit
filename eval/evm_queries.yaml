@@ -1,0 +1,16 @@
+queries:
+  - id: reentrancy-ordering
+    question: Why should contract state be updated before an external call?
+    expected_terms: [reentrancy, state]
+  - id: oracle-staleness
+    question: What validation is required before consuming an oracle price?
+    expected_terms: [freshness, timestamp]
+  - id: access-control
+    question: Which risks arise from an unrestricted privileged function?
+    expected_terms: [access, authorization]
+  - id: delegatecall-storage
+    question: How can delegatecall corrupt proxy storage?
+    expected_terms: [delegatecall, storage]
+  - id: signature-replay
+    question: How should signed messages be protected against replay?
+    expected_terms: [nonce, replay]

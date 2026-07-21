@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "contract-audit-rag"
+version = "0.1.0"
+description = "Local-first EVM security knowledge retrieval and MCP server"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4",
+  "fastembed",
+  "httpx",
+  "llama-index-core",
+  "llama-index-embeddings-huggingface",
+  "llama-index-vector-stores-qdrant",
+  "mcp[cli]",
+  "pydantic-settings",
+  "pypdf",
+  "pyyaml",
+  "qdrant-client",
+  "sentence-transformers",
+  "trafilatura",
+  "typer",
+]
+
+[project.optional-dependencies]
+dev = ["mypy", "pytest", "pytest-asyncio", "respx", "ruff", "types-PyYAML"]
+ocr = ["pymupdf", "pytesseract"]
+docs = ["reportlab"]
+
+[project.scripts]
+contract-audit-rag = "contract_audit_rag.cli:app"
+contract-audit-mcp = "contract_audit_rag.mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/contract_audit_rag"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["contract_audit_rag"]

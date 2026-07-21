@@ -1,0 +1,40 @@
+sources:
+  - id: solidity_docs
+    publisher: Solidity
+    seeds:
+      - https://docs.soliditylang.org/en/latest/security-considerations.html
+    allowed_domains: [docs.soliditylang.org]
+    allowed_path_prefixes: [/en/latest/]
+    content_types: [text/html]
+    license: documentation-site-terms
+    storage_approved: false
+    crawl_delay_seconds: 2.0
+    max_depth: 1
+
+  - id: openzeppelin_audits
+    publisher: OpenZeppelin
+    seeds:
+      - https://www.openzeppelin.com/security-audits
+    allowed_domains: [www.openzeppelin.com]
+    allowed_path_prefixes: [/news/, /security-audits]
+    content_types: [text/html, application/pdf]
+    license: verify-per-document
+    storage_approved: false
+    crawl_delay_seconds: 2.0
+    max_depth: 1
+
+  - id: trailofbits_secure_contracts
+    publisher: Trail of Bits
+    seeds:
+      - https://secure-contracts.com/
+    allowed_domains: [secure-contracts.com]
+    allowed_path_prefixes: [/]
+    content_types: [text/html]
+    license: CC-BY-SA-4.0
+    storage_approved: true
+    crawl_delay_seconds: 2.0
+    max_depth: 2
+
+# A source must be explicitly listed above before crawling. Review its current
+# robots.txt, terms, and document-level reproduction notices before increasing
+# depth or adding report archives.

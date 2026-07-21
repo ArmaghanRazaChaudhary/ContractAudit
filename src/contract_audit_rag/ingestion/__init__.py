@@ -1,0 +1,1 @@
+"""Governed document ingestion."""
