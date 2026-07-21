@@ -139,7 +139,7 @@ ContractAudit/
 
 ---
 
-## Design notes (for engineers / hiring managers)
+## Design notes
 
 - **Allowlist-first security posture** for anything that hits the network.
 - **Provenance-preserving chunks** so answers can be cited, not hand-waved.
